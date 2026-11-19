@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "replayed-rnn-gradients"
+version = "0.1.0"
+description = "Checkpointed recurrent gradients with deterministic dropout replay and independent derivative checks"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.2.6"]
+license = "MIT"
+
+[project.scripts]
+rnn-gradient-audit = "replayed_rnn.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
